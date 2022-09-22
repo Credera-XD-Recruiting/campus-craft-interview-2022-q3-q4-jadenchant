@@ -28,7 +28,9 @@
 }
 
 .profile-list-item .top-friend-flag {
-  display: none;
+  display: flex;
+  font-size: 13px;
+  margin-bottom: 4px;
 }
 
 .profile-list-item .top-friend-flag + .page-paragraph {
