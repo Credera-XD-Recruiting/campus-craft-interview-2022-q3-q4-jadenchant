@@ -64,6 +64,22 @@
   background-color: var(--grayscale_2);
 }
 
+#activity-active {
+  background-color: #52C1AD;
+}
+
+#activity-moderate {
+  background-color: #58B1C9;
+}
+
+#activity-low {
+  background-color: #C152A2;
+}
+
+#activity-inactive {
+  background-color: #C4C4C4;
+}
+
 /* SKELETON LOADING  */
 
 #profile-groups .skeleton-card {
