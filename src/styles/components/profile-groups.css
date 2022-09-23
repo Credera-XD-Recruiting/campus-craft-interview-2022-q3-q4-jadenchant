@@ -65,19 +65,19 @@
 }
 
 #activity-active {
-  background-color: #52C1AD;
+  background-color: var(--secondary);
 }
 
 #activity-moderate {
-  background-color: #58B1C9;
+  background-color: var(--primary);
 }
 
 #activity-low {
-  background-color: #C152A2;
+  background-color: var(--warning);
 }
 
 #activity-inactive {
-  background-color: #C4C4C4;
+  background-color: var(--grayscale_2);
 }
 
 /* SKELETON LOADING  */

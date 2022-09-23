@@ -41,6 +41,14 @@
   margin-bottom: 8px;
 }
 
+.post-publish-info {
+  align-items: center;
+}
+
+.post-publish-info > :first-child {
+  margin: 2px 0 8px 0;
+}
+
 /* SKELETON LOADING */
 .post-content.skeleton-block {
   height: 125px;
