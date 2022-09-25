@@ -49,8 +49,23 @@ export const generateFriendsListFromTemplate = (resultsData) => {
   if (resultsData.friends && resultsData.friends.length > 0) {
     removeChildNodes(friendsListSection);
 
-    for (let i = 0; i < resultsData.friends.length; i++) {
-      const friendsNode = generateListItemNode(resultsData.friends[i]);
+    let sortedFriends = resultsData.friends.sort((a,b) => {
+      if(a === b) {
+        return 0;
+      } else if(a.topFriend && !b.topFriend) {
+        return -1;
+      } else if(!a.topFriend && b.topFriend) {
+        return 1;
+      }
+
+      const aLast = a.name.split(' ').slice(-1).join(' ');
+      const bLast = b.name.split(' ').slice(-1).join(' ');
+
+      return aLast < bLast ? -1 : 1;
+    })
+
+    for (let i = 0; i < sortedFriends.length; i++) {
+      const friendsNode = generateListItemNode(sortedFriends[i]);
       friendsListSection.appendChild(friendsNode);
     }
   }
