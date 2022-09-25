@@ -1,4 +1,4 @@
-import { removeChildNodes } from "../utils";
+import { removeChildNodes, randomDarkColor } from "../utils";
 
 /**
  * Function which generates a single Card node based on a dataset
@@ -44,6 +44,18 @@ const generateCardNode = (data) => {
       "aria-label",
       `${authorFirstName} ${authorLastName}`
     );
+    avatarNode.appendChild(avatarImg);
+  } else {
+    const randomColor = randomDarkColor[Math.floor(Math.random()*5)];
+    const avatarImg = document.createElement("div");
+    avatarImg.style.backgroundColor = randomColor;
+    avatarImg.setAttribute("class", "no-img");
+    
+    const avatarInitials = document.createElement("p");
+    avatarInitials.setAttribute("class", "initials page-heading-1");
+    avatarInitials.innerHTML = authorFirstName.substring(0,1) + authorLastName.substring(0,1);
+
+    avatarImg.appendChild(avatarInitials)
     avatarNode.appendChild(avatarImg);
   }
 

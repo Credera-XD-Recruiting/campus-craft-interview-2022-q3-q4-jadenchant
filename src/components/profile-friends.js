@@ -1,4 +1,4 @@
-import { removeChildNodes } from "../utils";
+import { removeChildNodes, randomDarkColor } from "../utils";
 
 /**
  * Function which generates a single list-item node based on a dataset
@@ -29,6 +29,20 @@ const generateListItemNode = (data) => {
     const avatarImg = document.createElement("img");
     avatarImg.src = avatarSrc;
     avatarImg.setAttribute("aria-label", `${name}`);
+    avatarNode.appendChild(avatarImg);
+  } else {
+    const randomColor = randomDarkColor[Math.floor(Math.random()*5)];
+    const avatarImg = document.createElement("div");
+    avatarImg.style.backgroundColor = randomColor;
+    avatarImg.setAttribute("class", "no-img");
+    
+    const avatarInitials = document.createElement("p");
+    avatarInitials.setAttribute("class", "initials page-heading-1");
+
+    const initials = name.match(/(^\S\S?|\b\S)?/g).join("").match(/(^\S|\S$)?/g).join("").toUpperCase();
+    avatarInitials.innerHTML = initials;
+
+    avatarImg.appendChild(avatarInitials)
     avatarNode.appendChild(avatarImg);
   }
 
