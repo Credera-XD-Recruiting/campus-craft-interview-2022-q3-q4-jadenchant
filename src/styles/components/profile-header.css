@@ -22,6 +22,22 @@
   width: 100%;
 }
 
+.profile-avatar .no-img{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar .no-img p.initials {
+  text-transform: capitalize;
+  color: var(--grayscale_2);
+  letter-spacing: 6px;
+  margin-left: 6px;
+  font-size: 100px;
+}
+
 .profile-info {
   flex: 1;
   padding-left: 100px;

@@ -1,4 +1,5 @@
 import underlineSrc from "../assets/underline.svg";
+import { randomDarkColor } from "../utils";
 
 export const updateProfileInformation = (data) => {
   const { firstName, lastName, avatarSrc } = data;
@@ -22,5 +23,18 @@ export const updateProfileInformation = (data) => {
 
   if (!avatarSrc) {
     profileAvatarNode.remove();
+    const profileNoAvatar = headerNode.querySelector(".profile-avatar");
+    
+    const randomColor = randomDarkColor[Math.floor(Math.random()*5)];
+    const avatarImg = document.createElement("div");
+    avatarImg.style.backgroundColor = randomColor;
+    avatarImg.setAttribute("class", "no-img");
+
+    const avatarInitials = document.createElement("p");
+    avatarInitials.setAttribute("class", "initials page-heading-1");
+    avatarInitials.innerHTML = firstName.substring(0,1) + lastName.substring(0,1);
+
+    avatarImg.appendChild(avatarInitials);
+    profileNoAvatar.appendChild(avatarImg);
   }
 };
