@@ -32,6 +32,21 @@
   width: 100%;
 }
 
+.post-author-avatar .no-img{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-author-avatar .no-img p.initials {
+  text-transform: capitalize;
+  color: var(--grayscale_2);
+  letter-spacing: 4px;
+  margin-left: 4px;
+}
+
 .post-author-info {
   width: 100%;
   margin-left: 24px;
