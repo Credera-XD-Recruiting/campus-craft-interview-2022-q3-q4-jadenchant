@@ -1,3 +1,4 @@
+import starSrc from "../assets/star.svg";
 import { removeChildNodes } from "../utils";
 
 const activityStates = {
@@ -6,6 +7,7 @@ const activityStates = {
   moderate: "moderate",
   low: "low",
 };
+
 /**
  * Function which generates a single Card node based on a dataset
  *
@@ -13,7 +15,7 @@ const activityStates = {
  * @return {Node} generated markup for a card
  */
 const generateCardNode = (data) => {
-  const { name, href, image, activity } = data;
+  const { name, href, image, activity, favorite } = data;
   const templateId = "profile-group-results-item-template";
   const resultCardTemplate = document.getElementById(templateId);
   const clone = document.importNode(resultCardTemplate.content, true);
@@ -35,6 +37,17 @@ const generateCardNode = (data) => {
     referenceNode.setAttribute("id", "activity-low")
   } else {
     referenceNode.setAttribute("id", "activity-inactive")
+  }
+
+
+  const starNode = clone.querySelector(".star");
+  if(favorite) {
+    starNode.style.backgroundImage = `url(${starSrc}`;
+    // const starImg = document.createElement("img")
+    // starImg.setAttribute("src", starSrc);
+    // starImg.setAttribute("class", "star-svg");
+    // //starNode.innerHTML = starSrc;
+    // starNode.appendChild(starImg);
   }
 
   return clone;

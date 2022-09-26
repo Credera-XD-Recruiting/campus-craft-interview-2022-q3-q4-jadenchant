@@ -80,6 +80,18 @@
   background-color: var(--grayscale_2);
 }
 
+.star {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px 5px 0 0;
+  z-index: 2;
+  right: 0;
+  fill: yellow;
+  background-repeat: no-repeat;
+}
+
 /* SKELETON LOADING  */
 
 #profile-groups .skeleton-card {
